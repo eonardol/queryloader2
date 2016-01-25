@@ -16,6 +16,10 @@ var Overlay = {
       this.percentage = Percentage();
       this.percentage.barColor = this.barColor;
       this.percentage.idName = this.percentageId;
+      this.percentage.showImageAbove = this.showImageAbove;
+      this.percentage.imageAboveUrl = this.imageAboveUrl;
+      this.percentage.imageAboveWidth = this.imageAboveWidth;
+      this.percentage.imageAboveHeight = this.imageAboveHeight;
       this.percentage.create();
       this.element.appendChild(this.percentage.element);
     }
@@ -98,6 +102,10 @@ module.exports = function(parentElement) {
   overlay.barHeight = 1;
   overlay.fadeOutTime = 300;
   overlay.showPercentage = false;
+  overlay.showImageAbove = false;
+  overlay.imageAboveUrl = '';
+  overlay.imageAboveWidth = '0px';
+  overlay.imageAboveHeight = '0px';
 
   return overlay;
 };

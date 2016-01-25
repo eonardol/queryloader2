@@ -20,6 +20,13 @@ var Percentage = {
     this.element.style.marginTop = '-' + (59 + this.barHeight) + 'px';
     this.element.style.textAlign = 'center';
     this.element.style.color = this.barColor;
+    if (this.showImageAbove) {
+      this.element.style['padding-top'] = this.imageAboveHeight;
+      this.element.style['background-image'] = 'url('+this.imageAboveUrl+')';
+      this.element.style['background-repeat'] = 'no-repeat';
+      this.element.style['background-position'] = 'top center';
+      this.element.style['background-size'] = this.imageAboveWidth + ' ' + this.imageAboveHeight;
+    }
   },
 
   updateProgress: function(percentage, time) {
@@ -37,6 +44,11 @@ module.exports = function() {
   percentage.className = 'queryloader__overlay__percentage';
   percentage.barHeight = 1;
   percentage.barColor = '#fff';
+
+  percentage.showImageAbove = false;
+  percentage.imageAboveUrl = '';
+  percentage.imageAboveWidth = '0px';
+  percentage.imageAboveHeight = '0px';
 
   return percentage;
 };

@@ -41,6 +41,10 @@ var QueryLoader = {
     this.overlay.barColor = this.options.barColor;
     this.overlay.showPercentage = this.options.percentage;
     this.overlay.fadeOutTime = this.options.fadeOutTime;
+    this.overlay.showImageAbove = this.options.showImageAbove;
+    this.overlay.imageAboveUrl = this.options.imageAboveUrl;
+    this.overlay.imageAboveWidth = this.options.imageAboveWidth;
+    this.overlay.imageAboveHeight = this.options.imageAboveHeight;
 
     if (typeof this.element !== 'undefined') {
       this.overlay.init();
@@ -123,6 +127,10 @@ module.exports = function(element, options) {
       minimumTime: 300,
       maxTime: 10000,
       fadeOutTime: 1000,
+      showImageAbove: false,
+      imageAboveUrl: '',
+      imageAboveWidth: '0px',
+      imageAboveHeight: '0px',
     });
   }
 
